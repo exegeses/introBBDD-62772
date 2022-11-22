@@ -19,3 +19,20 @@ SELECT prdNombre, prdPrecio, mkNombre, catNombre
 FROM productos, marcas, categorias
 WHERE productos.idMarca = marcas.idMarca
   AND productos.idCategoria = categorias.idCategoria
+
+-- JOINS
+-- nombre(de producto), precio y nombre-de-marca de los productos
+SELECT prdNombre, prdPrecio, mkNombre
+    FROM productos
+     JOIN marcas
+      ON productos.idMarca = marcas.idMarca;
+
+-- nombre(de producto), precio,
+-- nombre-de-marca de los productos,
+-- nombre de categoría de los productos
+SELECT prdNombre, prdPrecio, mkNombre, catNombre
+    FROM productos
+    JOIN marcas
+      ON productos.idMarca = marcas.idMarca
+    JOIN categorias
+      ON productos.idCategoria = categorias.idCategoria;
